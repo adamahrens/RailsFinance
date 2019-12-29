@@ -5,8 +5,10 @@ ruby '2.6.3'
 
 gem 'annotate', '~> 3.0', '>= 3.0.3'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'jbuilder', '~> 2.7'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'meta_request', '~> 0.7.2'
 gem 'ordinare', '~> 0.4.0'
 gem 'pg', '>= 0.18', '< 2.0'
