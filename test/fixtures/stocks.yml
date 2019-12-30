@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: stocks
+#
+#  id         :bigint           not null, primary key
+#  ticker     :string
+#  name       :string
+#  price      :decimal(, )
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: MyString
+  name: MyString
+  price: 9.99
+
+two:
+  ticker: MyString
+  name: MyString
+  price: 9.99
