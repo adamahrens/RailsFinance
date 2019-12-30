@@ -41,5 +41,6 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'portfolio', to: 'user#portfolio'
+  post 'search', to: 'welcome#index'
   root 'welcome#index'
 end
