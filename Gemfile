@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'annotate', '~> 3.0', '>= 3.0.3'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
+gem 'd3_rails', '~> 4.1', '>= 4.1.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-bootstrap-views', '~> 1.1'
 gem 'jbuilder', '~> 2.7'
