@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Finance Tracker</a>
-      <%= form_with url: search_path, local: true, id: 'stock-search' do |form| %>
+      <%= form_with url: search_path, id: 'stock-search' do |form| %>
       <div class='form-row'>
         <div class='col-5'>
           <%= form.text_field :stocks, class:'form-control form-control-dark w-100', placeholder: 'Search' %>

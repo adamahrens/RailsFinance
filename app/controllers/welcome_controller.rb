@@ -3,11 +3,12 @@ class WelcomeController < ApplicationController
     if params[:stocks]
       logger.debug "Fetching #{params[:stocks]} stock"
       begin
-        stock = StockQuote::Stock.quote(params[:stocks])
-        logger.debug "#{stock.symbol} - #{stock.company_name}: $#{stock.latest_price}"
-        @stock = Stock.new(ticker: stock.symbol,
-                           name: stock.company_name,
-                           price: stock.latest_price)
+        @stock = Stock.fetch(params[:stocks])
+        respond_to do |format|
+          format.html
+          format.js { render partial: 'welcome/stock' }
+          format.json { render json: @stock }
+        end
       rescue RuntimeError => e
         logger.error e
         logger.debug "Unable to fetch #{params[:stocks]} stock"
