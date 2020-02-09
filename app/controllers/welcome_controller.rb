@@ -4,6 +4,9 @@ class WelcomeController < ApplicationController
       logger.debug "Fetching #{params[:stocks]} stock"
       begin
         @stock = Stock.fetch(params[:stocks])
+        logger.debug "Updating user's stocks"
+        current_user.stocks << @stock
+        @stock.save
         respond_to do |format|
           format.html
           format.js { render partial: 'welcome/stock' }

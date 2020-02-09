@@ -15,6 +15,14 @@ class Stock < ApplicationRecord
   validates :name, presence: true
   validates :price, numericality: { only_integer: false }
 
+  belongs_to :user
+
+  scope :recently, -> { order(created_at: :desc) }
+
+  def formatted_date
+    created_at.strftime('%m/%d/%Y %H:%M:%S')
+  end
+
   def self.fetch(symbol)
     stock = StockQuote::Stock.quote(symbol.downcase)
     logger.debug "#{stock.symbol}-#{stock.company_name}:$#{stock.latest_price}"
