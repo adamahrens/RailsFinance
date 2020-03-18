@@ -39,7 +39,13 @@
 #                  rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+  get 'stocks/destroy'
   devise_for :users
+  
+  resources :users do
+    resources :stocks, only: %i[destroy]
+  end 
+  
   get 'portfolio', to: 'user#portfolio'
   post 'search', to: 'welcome#index'
   root 'welcome#index'

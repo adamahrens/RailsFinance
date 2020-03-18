@@ -7,6 +7,14 @@ class WelcomeController < ApplicationController
         logger.debug "Updating user's stocks"
         current_user.stocks << @stock
         @stock.save
+        ActionCable.server.broadcast(
+          "stock_channel",
+          stock: { id: @stock.id,
+               ticker: @stock.ticker,
+                price: sprintf("$%2.2f", @stock.price),
+              company: @stock.name,
+                 date: @stock.formatted_date }
+        )
         respond_to do |format|
           format.html
           format.js { render partial: 'welcome/stock' }

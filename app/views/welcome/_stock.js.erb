@@ -1,1 +1,5 @@
-document.querySelector("#stock-results").innerHTML = '<%= j render "welcome/stock.html"%>'
+var stockResults = document.querySelector("#stock-results")
+
+if (stockResults !== null) {
+    stockResults.innerHTML = '<%= j render "welcome/stock.html"%>'
+}

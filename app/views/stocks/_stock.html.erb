@@ -4,4 +4,5 @@
   <td><%= number_to_currency(stock.price) %></td>
   <td><%= stock.name %></td>
   <td><%= stock.formatted_date %></td>
+  <td><%= link_to 'Remove', user_stock_path(current_user, stock), method: :delete, class: 'btn btn-warning' %></td>
 </tr>
