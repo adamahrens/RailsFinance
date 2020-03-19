@@ -8,6 +8,16 @@
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
   </div>
 
+   <div class="form-group">
+    <%= f.label :first %>
+    <%= f.text_field :first, autofocus: true, autocomplete: 'first', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last %>
+    <%= f.text_field :last, autofocus: true, autocomplete: 'last', class: 'form-control' %>
+  </div>
+
   <div class="form-group">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>

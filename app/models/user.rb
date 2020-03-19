@@ -19,4 +19,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :stocks
+
+  validates :first, presence: true
+  validates :last, presence: true
+
+  def full_name
+    "#{first} #{last}"
+  end
 end
